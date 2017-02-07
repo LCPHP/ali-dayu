@@ -31,6 +31,12 @@ class Dayu {
         
         $smsParam = json_encode($data['sms_param']);
         $req->setSmsParam($smsParam);
+        
+        // 发送给多人
+        if (is_array($data['rec_num'])){
+            $data['rec_num'] = implode(',', $data['rec_num']);
+        }
+        
         $req->setRecNum($data['rec_num']);
         $req->setSmsTemplateCode($data['sms_template_code']);
         
