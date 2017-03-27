@@ -51,7 +51,7 @@ class Dayu {
         }
         
         if (isset($data->code)){
-            return ['status' => 0 , 'data'=> $data , 'msg'=>$data->sub_msg];
+            return ['status' => 0 , 'data'=> $data , 'msg'=>isset($data->msg) ? $data->msg : ''];
         }
     }
 }
